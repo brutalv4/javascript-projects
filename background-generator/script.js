@@ -13,6 +13,13 @@ function setGradient() {
 color1.addEventListener('input', setGradient);
 color2.addEventListener('input', setGradient);
 
+function toHex(r, g, b) {
+  return [r, g, b].reduce((hex, i) => {
+    const h = i.toString(16);
+    return (hex += h.length === 1 ? h + h : h);
+  }, '#');
+}
+
 function randomize() {
   const rnd = () => Math.floor(Math.random() * 255);
 
@@ -24,14 +31,7 @@ function randomize() {
 
 btn.addEventListener('click', randomize);
 
-function toHex(r, g, b) {
-  return [r, g, b].reduce((hex, i) => {
-    const h = i.toString(16);
-    return (hex += h.length === 1 ? h + h : h);
-  }, '#');
-}
-
-function onBodyLoad() {
+function syncBg() {
   const currentGradient = getComputedStyle(body, null).getPropertyValue(
     'background-image'
   );
@@ -48,4 +48,4 @@ function onBodyLoad() {
   setGradient();
 }
 
-body.onload = onBodyLoad;
+body.onload = syncBg;
