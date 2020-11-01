@@ -5,10 +5,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "background-generator",
+      "name": "current",
       "type": "chrome",
       "request": "launch",
-      "url": "http://localhost:5500/background-generator",
+      "url": "http://localhost:5500/dicee-game",
       "webRoot": "${workspaceFolder}",
       "runtimeExecutable": "/usr/bin/chromium",
       "userDataDir": "${workspaceFolder}/.vscode/chromium"

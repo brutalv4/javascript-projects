@@ -49,3 +49,5 @@ function syncBg() {
 }
 
 body.onload = syncBg;
+
+const a = sum(5, 10);
